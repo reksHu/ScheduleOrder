@@ -1,0 +1,461 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using ScheduleOrder.Utils;
+
+namespace ScheduleOrder
+{
+    public partial class MainForm : Form
+    {
+        private static string APPPATH=System.Windows.Forms.Application.StartupPath;
+        public MainForm()
+        {
+            InitializeComponent();
+            //path.Text = System.Windows.Forms.Application.StartupPath;
+            pic_schedule_time.Visible = false;
+            dataGridView_home.Visible = false;
+            btnJobSave.Click += new EventHandler(btn_jobSave_Click);
+            btnNurserSave.Click += new EventHandler(btnNurseSave_Click);
+            dataGridView_home.CellClick += new DataGridViewCellEventHandler(dataGridView_home_CellClick);
+        }
+
+        void dataGridView_home_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Rectangle rect = dataGridView_home.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+            
+        }
+
+        
+       
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            //护士管理
+            nurseGrid.DataSource = NursesDataBindingSource();
+
+            //岗位管理
+            jobGridView.DataSource = DataBindingJobsSource();
+            //自动保存
+            //jobGridView.CellValueChanged += new DataGridViewCellEventHandler(jobGridView_CellValueChanged);
+            
+
+
+            dataGridView_home.AutoGenerateColumns = true;
+            dataGridView_home.EditMode = DataGridViewEditMode.EditOnEnter;
+            //自动保存
+            dataGridView_home.CellValueChanged += new DataGridViewCellEventHandler(dataGridView_home_CellValueChanged);
+
+            InitHomeGridComponet();
+
+            //BindHomeJobDrop();
+        }
+
+      
+
+        void dataGridView_home_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            string strColumn = dataGridView_home.Columns[e.ColumnIndex].HeaderText;
+            string strRowl = dataGridView_home.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
+        //void jobGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    //DataGridViewRow
+        //    if (jobGridView.CurrentRow.Index > jobGridView.Rows.Count) {
+                
+        //        string jobTitleHeader = jobGridView.Columns[e.ColumnIndex].HeaderText;
+        //        string jobTitle = jobGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+        //        string jobRating = jobGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+        //        object id = jobGridView.Rows[e.RowIndex].Cells[2].Value;
+        //    }
+           
+        //}
+
+        private void InitHomeGridComponet() {
+            DataTable dt = GetHomeGridData();
+            dataGridView_home.DataSource = dt;
+            for (int i = 1; i < 15; i++)
+            {
+                dataGridView_home.Columns[i].Width = 60;
+                //DataGridViewComboBoxColumn combox = new DataGridViewComboBoxColumn();
+                //combox.Name = "box_job"+i;
+                //combox.Items.Add("asdf");
+
+            }
+
+            //string xmlfileFullPath = GetNurseXMLFullPath();
+            //List<String> nursers = XMLHelper.GetNursersName(xmlfileFullPath);
+            ////foreach (String item in nursers)
+            //for (int index = 0; index < nursers.Count; index++)
+            //{
+            //    //dataGridView_home.Rows[index].Cells[0].Value = nursers[index];
+            //    DataGridViewRow row = new DataGridViewRow();
+            //    //dataGridView_home.Rows.Add(row);
+            //    DataGridViewTextBoxCell textboxcell = new DataGridViewTextBoxCell();
+            //    textboxcell.Value = nursers[index];
+            //    row.Cells.Add(textboxcell);
+            //    //row.Cells[0].Value = nursers[index];
+            //    //for (int i = 1; i < 15; i++) //generate each day morning and afternoon
+            //    //{
+
+            //    //    //DataGridViewComboBoxCell combox = new DataGridViewComboBoxCell();
+            //    //    //combox.Items.Add("asdf");
+            //    //    //combox.Items.Add("abc");
+
+            //    //    //row.Cells.Add(combox);
+            //    //    row.Cells[i].Value = string.Empty;
+            //    //}
+
+            //}
+
+           
+
+
+        }
+
+        //在每行的左边为每行添加一个从1开始递增的序号
+        private void jobGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            Rectangle rectangle = new Rectangle(e.RowBounds.Location.X,
+                e.RowBounds.Location.Y,
+                jobGridView.RowHeadersWidth - 4,
+                e.RowBounds.Height);
+            TextRenderer.DrawText(e.Graphics, (e.RowIndex + 1).ToString(),
+                jobGridView.RowHeadersDefaultCellStyle.Font,
+                rectangle,
+                jobGridView.RowHeadersDefaultCellStyle.ForeColor,
+                TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
+        }
+
+        void jobGridView_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        {
+            int CIndex = e.ColumnIndex;
+
+        }
+
+
+        private BindingSource DataBindingJobsSource() {
+            System.Data.DataSet ds = new System.Data.DataSet();
+            string xmlfileFullPath = GetJobXMLFullPath();
+            //string rootElement = "Jobs";
+            ds.ReadXml(xmlfileFullPath);
+
+            return new BindingSource(ds.Tables[0], null);
+        
+        }
+        
+
+        private BindingSource NursesDataBindingSource() {
+            System.Data.DataSet ds = new System.Data.DataSet();
+            string fileLocation = System.IO.Path.Combine(APPPATH, "data");
+            string xmlFileName = "Nursers.xml";
+            string xmlfileFullPath = System.IO.Path.Combine(fileLocation, xmlFileName);
+            ds.ReadXml(xmlfileFullPath);
+
+            return new BindingSource(ds.Tables[0], null);
+        }
+
+
+        private DataTable GetHomeGridData()
+        {
+
+            DataTable home_table = new DataTable();
+            string fileLocation = System.IO.Path.Combine(APPPATH, "data");
+            string xmlFileName = "Nursers.xml";
+            string xmlfileFullPath = System.IO.Path.Combine(fileLocation, xmlFileName);
+            home_table.Columns.Add("姓名");
+            for (int i = 1; i < 8; i++)
+            {
+                home_table.Columns.Add("M" + i);
+                home_table.Columns.Add("A" + i);
+
+            }
+            List<String> nursers = XMLHelper.GetNursersName(xmlfileFullPath);
+
+            DataTable jobs = new DataTable();
+            jobs.Columns.Add("Id");
+            jobs.Columns.Add("Name");
+
+            foreach (String item in nursers)
+            {
+                DataRow nameRow = home_table.NewRow();
+                nameRow[0] = item;
+
+                for (int i = 1; i < 15; i++) //generate each day morning and afternoon
+                {
+
+                    nameRow[i] = string.Empty;
+
+                }
+
+                home_table.Rows.Add(nameRow);
+
+            }
+      
+           return home_table;
+
+        }
+        private void BindHomeJobDrop() {
+            List<String> nursers = XMLHelper.GetNursersName(GetNurseXMLFullPath());
+            DataTable jobs = new DataTable();
+            jobs.Columns.Add("Id");
+            jobs.Columns.Add("Name");
+            ComboBox cmb_temp = new ComboBox();
+            foreach (String item in nursers)
+            {
+                DataRow nameRow = jobs.NewRow();
+               
+                nameRow["Id"] = item;
+                nameRow["Name"] = item;
+                jobs.Rows.Add(nameRow);
+            }
+            cmb_temp.ValueMember = "Id";
+            cmb_temp.DisplayMember = "Name";
+            cmb_temp.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmb_temp.DataSource = jobs;
+            dataGridView_home.Controls.Add(cmb_temp);
+
+        }
+        private void initJobCombox() {
+            List<String> nursers = XMLHelper.GetNursersName(GetNurseXMLFullPath());
+            DataTable home_table = new DataTable();
+            foreach (String item in nursers)
+            {
+                DataRow nameRow = home_table.NewRow();
+                home_table.Rows.Add(nameRow);
+
+            }
+            home_table.Rows.Add("JobId", typeof(string));
+            home_table.Rows.Add("JobName", typeof(string));
+            home_table.Rows.Add(new object[] { "1", "zezhu" });
+            home_table.Rows.Add(new object[] { "2", "zefu" });
+        }
+       
+
+       
+       
+
+        private void schedule_dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+           DateTime dt =  schedule_dateTimePicker.Value;
+           int a =Convert.ToInt16(dt.DayOfWeek);
+           DateTime startWeek = dt.AddDays(1-Convert.ToInt16(dt.DayOfWeek.ToString("d")));
+           string dayOfWeek = startWeek.DayOfWeek.ToString();
+
+           panel_week.Controls.Clear();
+
+           int P_int_x = 10;
+           int l2_int_x = 10;
+           int l_morning_x = 10;
+           int l_afternoon_x = 70;
+
+           for (int i = 0; i < 7; i++)
+           {
+               DateTime offSet = startWeek.AddDays(i);
+
+               Label l = new Label();
+               l.Width = 120;
+               l.Height = 25;
+               l.Location = new Point(P_int_x,0);
+               P_int_x += 120;
+               l.BorderStyle = BorderStyle.FixedSingle;
+               l.TextAlign = ContentAlignment.MiddleCenter;
+               l.Text = offSet.ToString("yyyy-MM-dd");
+
+               Label l2 = new Label();
+               l2.Text = offSet.DayOfWeek.ToString();
+               l2.Width = 120;
+               l2.Height = 25;
+               l2.Location = new Point(l2_int_x, 20);
+               l2_int_x += 120;
+
+               l2.TextAlign = ContentAlignment.MiddleCenter;
+               l2.BorderStyle = BorderStyle.FixedSingle;
+              
+               Label l_morning = new Label();
+               l_morning.Text="上午";
+               l_morning.Width = 60;
+               l_morning.Height = 25;
+               l_morning.BorderStyle = BorderStyle.FixedSingle;
+               l_morning.TextAlign = ContentAlignment.MiddleCenter;
+               l_morning.Location = new Point(l_morning_x,40);
+               l_morning_x +=120;
+
+               Label l_afternoon = new Label();
+               l_afternoon.Text="下午";
+               l_afternoon.Width = 60;
+               l_afternoon.Height = 25;
+               l_afternoon.BorderStyle = BorderStyle.FixedSingle;
+               l_afternoon.TextAlign = ContentAlignment.MiddleCenter;
+
+               l_afternoon.Location = new Point(l_afternoon_x, 40);
+               l_afternoon_x += 120;
+
+
+               panel_week.Controls.Add(l);
+               panel_week.Controls.Add(l2);
+               panel_week.Controls.Add(l_morning);
+               panel_week.Controls.Add(l_afternoon);
+              
+           }
+           pic_schedule_time.Visible = true;
+           dataGridView_home.Visible = true;
+           
+        }
+
+
+       
+
+        private void btn_scheduleSave_Click(object sender, EventArgs e)
+        {
+            List<Scheduler> nurserTasks = new List<Scheduler>();
+            int rowCount = dataGridView_home.RowCount;
+            DateTime dt = schedule_dateTimePicker.Value;
+            for (int index = 0; index < rowCount-1; index++)
+            {
+                Scheduler sche = new Scheduler();
+
+                string nurserName = dataGridView_home.Rows[index].Cells[0].Value.ToString();
+                string mon_Morning = dataGridView_home.Rows[index].Cells[1].Value.ToString();
+                string mon_afternoon = dataGridView_home.Rows[index].Cells[2].Value.ToString();
+
+                string tuesday_morning = dataGridView_home.Rows[index].Cells[3].Value.ToString();
+                string tuesday_afternoon = dataGridView_home.Rows[index].Cells[4].Value.ToString();
+
+                string wed_morning = dataGridView_home.Rows[index].Cells[5].Value.ToString();
+                string wed_afternoon = dataGridView_home.Rows[index].Cells[6].Value.ToString();
+
+                string thu_morning = dataGridView_home.Rows[index].Cells[7].Value.ToString();
+                string thu_afternoon = dataGridView_home.Rows[index].Cells[8].Value.ToString();
+
+                string friday_morning = dataGridView_home.Rows[index].Cells[9].Value.ToString();
+                string friday_afternoon = dataGridView_home.Rows[index].Cells[10].Value.ToString();
+
+                string sta_morning = dataGridView_home.Rows[index].Cells[11].Value.ToString();
+                string sta_afternoon = dataGridView_home.Rows[index].Cells[12].Value.ToString();
+
+                string sunday_monring = dataGridView_home.Rows[index].Cells[13].Value.ToString();
+                string sunday_afternoon = dataGridView_home.Rows[index].Cells[14].Value.ToString();
+
+                int a =Convert.ToInt16(dt.DayOfWeek);
+                DateTime startWeek = dt.AddDays(1-Convert.ToInt16(dt.DayOfWeek.ToString("d")));
+
+                sche.NurseName = nurserName;
+
+                sche.MondayDate = startWeek.ToString("yyyy-MM-dd");
+                sche.MondayTask = mon_Morning + "###" + mon_afternoon;
+
+                sche.ThursdayDate = startWeek.AddDays(1).ToString("yyyy-MM-dd");
+                sche.TuesdayTask = tuesday_morning + "###" + tuesday_afternoon;
+
+                sche.WensdayDate = startWeek.AddDays(2).ToString("yyyy-MM-dd");
+                sche.WensdayTask = wed_morning + "###" + wed_afternoon;
+
+                sche.ThursdayDate = startWeek.AddDays(3).ToString("yyyy-MM-dd");
+                sche.TuesdayTask = tuesday_morning + "###" + tuesday_afternoon;
+
+                sche.ThursdayDate = startWeek.AddDays(4).ToString("yyyy-MM-dd");
+                sche.TuesdayTask = tuesday_morning + "###" + tuesday_afternoon;
+
+                sche.FridayDate = startWeek.AddDays(5).ToString("yyyy-MM-dd");
+                sche.FridayTask = friday_morning + "###" + friday_afternoon;
+
+                sche.SaturdayDate = startWeek.AddDays(6).ToString("yyyy-MM-dd");
+                sche.SaturdayTask = sta_morning + "###" + sta_afternoon;
+
+                sche.SundayDate = startWeek.AddDays(7).ToString("yyyy-MM-dd");
+                sche.SundayTask = sunday_monring + "###" + sunday_afternoon;
+
+                nurserTasks.Add(sche);
+
+            }
+
+            string path = System.Windows.Forms.Application.StartupPath;
+            //string appLocation = System.AppDomain.CurrentDomain.BaseDirectory;
+            string fileLocation = System.IO.Path.Combine(path, "data");
+            string fileName = string.Format("");
+            string xmlfileFullPath = System.IO.Path.Combine(fileLocation, "Tasks.xml");
+            string rootElement = "Nursers";
+
+        }
+
+        void btn_jobSave_Click(object sender, EventArgs e)
+        {
+            int rowCount = jobGridView.RowCount;
+            string jobxmlfileFullPath = GetJobXMLFullPath();
+            for (int index = 0; index < rowCount - 1; index++) {
+                string jobTitle = jobGridView.Rows[index].Cells[0].Value.ToString();
+                string jobRating = jobGridView.Rows[index].Cells[1].Value.ToString();
+                string id = jobGridView.Rows[index].Cells[2].Value.ToString();
+                Job job = new Job();
+                job.JobName = jobTitle;
+                job.JobIndex = jobRating;
+                //it's a new row if empty
+                if (string.IsNullOrEmpty(id)) {
+                    DataInit.AddJobNode(jobxmlfileFullPath, job);
+                }
+                else
+                {
+                    job.Id = id;
+                    DataInit.UpdateJobNode(jobxmlfileFullPath, "Jobs", job);
+                }
+            }
+            MessageBox.Show("保存成功。");
+        }
+
+        private void btnNurseSave_Click(object sender, EventArgs e)
+        {
+            string xmlfileFullPath = GetNurseXMLFullPath();
+            int rowCount = nurseGrid.RowCount;
+            for (int index = 0; index < rowCount-1; index++)
+            {
+                string nurseName = nurseGrid.Rows[index].Cells[0].Value.ToString();
+                string nurseLevel = nurseGrid.Rows[index].Cells[1].Value.ToString();
+                string nurseRating = nurseGrid.Rows[index].Cells[2].Value.ToString();
+                string id = nurseGrid.Rows[index].Cells[3].Value.ToString();
+                Nurser nurser = new Nurser();
+                nurser.NurserName = nurseName;
+                nurser.NurserLevel = nurseLevel;
+                nurser.NurserLevelRating = nurseRating;
+                //it's a new row if empty
+                if (string.IsNullOrEmpty(id))
+                {
+                    DataInit.AddNurseNode(xmlfileFullPath, nurser);
+                }
+                else {
+                    nurser.Id = id;
+                    DataInit.UpdateNurserNode(xmlfileFullPath, nurser);
+                }
+
+            }
+            InitHomeGridComponet();
+            MessageBox.Show("保存成功。");
+           
+        }
+
+
+        private string GetJobXMLFullPath()
+        {
+            string fileLocation = System.IO.Path.Combine(APPPATH, "data");
+            string xmlFileName = "Jobs.xml";
+            string xmlfileFullPath = System.IO.Path.Combine(fileLocation, xmlFileName);
+            return xmlfileFullPath;
+        }
+
+        private string GetNurseXMLFullPath() {
+            string path = System.Windows.Forms.Application.StartupPath;
+            string fileLocation = System.IO.Path.Combine(path, "data");
+            string xmlfileFullPath = System.IO.Path.Combine(fileLocation, "Nursers.xml");
+            return xmlfileFullPath;
+        }
+
+
+        
+ 
+    }
+}

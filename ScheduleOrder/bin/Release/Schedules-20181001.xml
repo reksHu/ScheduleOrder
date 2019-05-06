@@ -1,0 +1,734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schedules>
+  <Schedule id="3eae8ef5-b39c-420b-87e3-837e44c537ad">
+    <NurserName>高佳</NurserName>
+    <NurserRating>2</NurserRating>
+    <NurserLevel>N3</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责副</Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="0508053c-c218-4a3c-ae00-dde19ece58cd">
+    <NurserName>刘静</NurserName>
+    <NurserRating>1.8</NurserRating>
+    <NurserLevel>N2</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">培训</Morning>
+      <Afternoon JobRating="">培训</Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">培训</Morning>
+      <Afternoon JobRating="">培训</Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">培训</Morning>
+      <Afternoon JobRating="">责副</Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">责副</Morning>
+      <Afternoon JobRating="">责副</Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责副</Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">责副</Morning>
+      <Afternoon JobRating="">责副</Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">责副</Morning>
+      <Afternoon JobRating="">责副</Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="579bdb3e-92f2-433c-8ee4-4a86b35fa088">
+    <NurserName>叶双</NurserName>
+    <NurserRating>1</NurserRating>
+    <NurserLevel>N3</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">责副</Morning>
+      <Afternoon JobRating="">培训</Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">办</Morning>
+      <Afternoon JobRating="">办</Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">办</Morning>
+      <Afternoon JobRating="">办</Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">责副</Morning>
+      <Afternoon JobRating="">起</Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">起</Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="2eb0cb0d-0235-4d54-b362-806d3148af26">
+    <NurserName>郑智丹</NurserName>
+    <NurserRating>1</NurserRating>
+    <NurserLevel>N2</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">责组</Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="134df5d9-afab-48bf-abf5-d4d5563d9056">
+    <NurserName>杨正辉</NurserName>
+    <NurserRating>2</NurserRating>
+    <NurserLevel>N2</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">责组</Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">责副</Morning>
+      <Afternoon JobRating="">培训</Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="3cf7e4df-5091-41bb-81e4-314d3da8d9cd">
+    <NurserName>张静</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N2</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="0.5">责副</Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="3ee62d53-a81a-4d4a-a4c9-b3fc7a7eb71d">
+    <NurserName>唐雪娇</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N2</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="b3a0bdf7-adac-4f1d-8bc5-a75f9c486b5c">
+    <NurserName>黄新梅</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N2</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="ef9d3b8a-22a9-48ed-a231-036c696524ed">
+    <NurserName>刘静</NurserName>
+    <NurserRating>1.8</NurserRating>
+    <NurserLevel>N2</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="a403621c-cf13-4447-b6d7-ed2eea651d8c">
+    <NurserName>何静</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N3</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="b4d9bf75-033a-4f22-8cf8-fe3aa289b98e">
+    <NurserName>张亚平</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N0</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="0443499c-af5a-40c1-b050-e2cc25473138">
+    <NurserName>冯巧林</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N1</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="5d83aad8-759d-41a1-817e-e2f360268140">
+    <NurserName>周敏</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N1</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="817c6730-d9da-4606-a95c-1c788ad32b62">
+    <NurserName>张倩</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N1</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="253385f6-c70c-4b00-99f7-77c6b00e6071">
+    <NurserName>杨君</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N1</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+  <Schedule id="9d03f39a-bf14-45fe-a779-a2b93528a9d8">
+    <NurserName>雍丽萍</NurserName>
+    <NurserRating>
+    </NurserRating>
+    <NurserLevel>N1</NurserLevel>
+    <WeekFirstDay>2018-10-01</WeekFirstDay>
+    <Job WeekDay="1">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="2">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="3">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="4">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="5">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="6">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+    <Job WeekDay="7">
+      <Morning JobRating="">
+      </Morning>
+      <Afternoon JobRating="">
+      </Afternoon>
+    </Job>
+  </Schedule>
+</Schedules>

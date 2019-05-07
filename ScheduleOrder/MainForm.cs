@@ -33,8 +33,13 @@ namespace ScheduleOrder
             dataGridView_home.CellClick += new DataGridViewCellEventHandler(dataGridView_home_CellClick);
             dataGridView_home.AllowUserToAddRows = false;
             btnViewScheduleHistory.Click += new EventHandler(btnViewScheduleHistory_Click);
+            //dataGridView_home.ContextMenu = contextMenu_rightclick;
 
-
+            /// 处理鼠标右键事件
+            //dataGridView_home.CellMouseClick += new DataGridViewCellMouseEventHandler(dataGridView_home_CellMouseClick);
+            StripMenuItem_Combine.Click += new EventHandler(StripMenuItem_Combine_Click);
+            StripMenuItem_Night1.Click += new EventHandler(StripMenuItem_Night1_Click);
+            ///结束右键处理事件
 
             dataGridView_home.RowPostPaint += new DataGridViewRowPostPaintEventHandler(dataGridView_home_RowPostPaint);
             jobGridView.RowPostPaint += new DataGridViewRowPostPaintEventHandler(jobGridView_RowPostPaint);
@@ -75,6 +80,9 @@ namespace ScheduleOrder
             btnUploadSchedule.Click += new EventHandler(btnUploadSchedule_Click);
             btnUploadSchedule.Visible = false;
 
+
+            
+
             ////////Common configuration//////////////////
             //lbMsg.Text = "设计制作人：胡鸿春，联系方式:153 8810 9543";
             lbMsg.Text = "联系人：胡鸿春(153 8810 9543), 吕波(152 8111 1616)";
@@ -95,7 +103,45 @@ namespace ScheduleOrder
 
         }
 
-      
+        /// <summary>
+        /// 上夜点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void StripMenuItem_Night1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        void StripMenuItem_Combine_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_home.CurrentCell != null 
+                && dataGridView_home.CurrentCell.Value != null 
+                && !string.IsNullOrEmpty(dataGridView_home.CurrentCell.Value.ToString()))
+            {
+                //DataGridViewColumn column = dataGridView_home.CurrentCell.OwningColumn;
+                int columnIndex = dataGridView_home.CurrentCell.ColumnIndex;
+                int rowIndex = dataGridView_home.CurrentCell.RowIndex;
+                //表示选中了下午单元格,设置上午单元格值
+                if (columnIndex % 2 == 0)
+                { 
+                    dataGridView_home.Rows[rowIndex].Cells[columnIndex - 1].Value = dataGridView_home.CurrentCell.Value.ToString();
+                    dataGridView_home.Rows[rowIndex].Cells[columnIndex - 1].Tag = dataGridView_home.CurrentCell.Tag;
+                }
+                else {
+                    dataGridView_home.Rows[rowIndex].Cells[columnIndex + 1].Value = dataGridView_home.CurrentCell.Value.ToString();
+                    dataGridView_home.Rows[rowIndex].Cells[columnIndex + 1].Tag = dataGridView_home.CurrentCell.Tag;               
+                }
+
+                //dataGridView_home.CurrentCell.Value = jobBox.Text;
+                //dataGridView_home.CurrentCell.Tag = jobBox.SelectedValue;
+
+            }
+            else {
+                MessageBox.Show("请先选择班次，再进行班次合并.");
+            }
+        }
 
         void btnExportReport_Click(object sender, EventArgs e)
         {
@@ -474,6 +520,15 @@ namespace ScheduleOrder
                     jobBox.Width = rect.Width;
                     jobBox.Height = rect.Height;
 
+                    if (string.IsNullOrEmpty(dataGridView_home.CurrentCell.Value.ToString()))
+                    {
+                        jobBox.SelectedIndex = 0;
+                    }
+                    else {
+                        //jobBox.SelectedValue = dataGridView_home.CurrentCell.Tag.ToString();
+                        jobBox.Text = dataGridView_home.CurrentCell.Value.ToString(); 
+                    }
+
                     if (colName.StartsWith("M") || colName.StartsWith("A"))
                     {
                         jobBox.Visible = true;
@@ -487,6 +542,7 @@ namespace ScheduleOrder
                 }
 
             }
+
         }
 
         //在每行的左边为每行添加一个从1开始递增的序号
@@ -700,6 +756,7 @@ namespace ScheduleOrder
             cmb_temp.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_temp.Visible = false;
             cmb_temp.DataSource = dtJobs;
+            
             dataGridView_home.Controls.Add(cmb_temp);
 
             cmb_temp.SelectedIndexChanged += new EventHandler(cmb_Job_SelectedIndexChanged);
@@ -824,7 +881,7 @@ namespace ScheduleOrder
             btnScheduleSave.Visible = true;
             btnSechduleRollback.Visible = true;
             btnPrint.Visible = true;
-            btnUploadSchedule.Visible = true;
+            //btnUploadSchedule.Visible = true;
         }
 
 

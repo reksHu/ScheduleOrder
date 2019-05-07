@@ -49,11 +49,15 @@ namespace ScheduleOrder
 
     /// <summary>
     /// Morning or Afternoon
+    /// NightShift1表示上夜班
+    /// NightShift2下夜班
     /// </summary>
     public enum ScheduledType
     {
         Morning,
-        Afternoon
+        Afternoon,
+        NightShift1,
+        NightShift2
     }
 
     public class TaskDetail {

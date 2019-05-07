@@ -151,10 +151,21 @@ namespace ScheduleOrder
                 lable_message.Visible = true;
                 DateTime datetime = datePickerReporing.Value;
                 //string filePath = Miscellaneous.GetExcelsFileFullPath(string.Format("绩效统计-{0}.xlsx", datetime.ToString("yyyy-MM")));
-                string filePath = Miscellaneous.GetExcelsFileFullPath(string.Format("绩效统计-{0}.xls", datetime.ToString("yyyy-MM")));
-                DataTable dt = DatagridviewHelper.ConvertDataGridViewToTable(dataGridReporting);
-                ExcelHelper.WriteExcel(filePath, this.dataGridReporting);
-                MessageBox.Show("导出成功", "提示消息");
+
+                excelSaveFileDialog.Title = "选择文件保存位置";
+                excelSaveFileDialog.Filter = "*.xlsx|*.xls";
+                string fileName = string.Format("绩效统计-{0}.xlsx", datetime.ToString("yyyy-MM"));
+                excelSaveFileDialog.FileName = fileName;
+                if (excelSaveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //string filePath = Miscellaneous.GetExcelsFileFullPath(string.Format("绩效统计-{0}.xls", datetime.ToString("yyyy-MM")));
+                    string filePath = excelSaveFileDialog.FileName;
+                    DataTable dt = DatagridviewHelper.ConvertDataGridViewToTable(dataGridReporting);
+                    ExcelHelper.WriteExcel(filePath, this.dataGridReporting);
+                    MessageBox.Show("导出成功", "提示消息");
+                }
+
+               
             }
             catch (Exception ex)
             {
@@ -218,9 +229,17 @@ namespace ScheduleOrder
                 }
                 else
                 {
-                    ExcelHelper.DataTableToExcelForSchedule(Miscellaneous.GetScheduleTempExcelFile(), dt, weekdays);
-                    //NPOIHelper.DataTableToExcelForSchedule_NPOI(tempExcelPath, dt, weekdays);
-                    MessageBox.Show("保存Excel文件成功", "文件保存成功");
+                    //SaveFileDialog fileDialog = new SaveFileDialog();
+                    excelSaveFileDialog.Title = "选择文件保存位置";
+                    excelSaveFileDialog.Filter = "*.xlsx|*.xls";
+                    string fileName = string.Format("护理排班表－护理部-{0}.xls", weekdays[0]);
+                    excelSaveFileDialog.FileName = fileName;
+                    if (excelSaveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string exportExcelFilePath = excelSaveFileDialog.FileName;
+                        ExcelHelper.DataTableToExcelForSchedule(Miscellaneous.GetScheduleTempExcelFile(), exportExcelFilePath, dt, weekdays);
+                        MessageBox.Show("保存Excel文件成功", "文件保存成功");
+                    }
                 }
             }
             catch (Exception ex)

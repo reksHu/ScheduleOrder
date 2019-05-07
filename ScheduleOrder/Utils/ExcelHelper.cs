@@ -131,12 +131,12 @@ namespace ScheduleOrder.Utils
            }
        }
 
-       public static void DataTableToExcelForSchedule(string filePath, System.Data.DataTable dt, List<string> weekdays)
+       public static void DataTableToExcelForSchedule(string tempfilePath,string savedExcelFilePath, System.Data.DataTable dt, List<string> weekdays)
        {
            Excel.Application excel = new Excel.Application();
            excel.Visible = false;
 
-           Excel.Workbook workbook = excel.Application.Workbooks.Open(filePath, Missing.Value, Missing.Value, Missing.Value, Missing.Value
+           Excel.Workbook workbook = excel.Application.Workbooks.Open(tempfilePath, Missing.Value, Missing.Value, Missing.Value, Missing.Value
 , Missing.Value, Missing.Value, Missing.Value, Missing.Value
 , Missing.Value, Missing.Value, Missing.Value, Missing.Value);
 
@@ -223,9 +223,9 @@ namespace ScheduleOrder.Utils
                range.Borders.LineStyle = 1;  //设置
            }
            string fileName =string.Format("护理排班表－护理部-{0}.xls",weekdays[0]);
-           string savedPath = Miscellaneous.GetExcelsFileFullPath(fileName);
-
-           workbook.SaveAs(savedPath);
+           //string savedPath = Miscellaneous.GetExcelsFileFullPath(fileName);
+           //string savedExcelPath = System.IO.Path.Combine(savedExcelLocation, fileName);
+           workbook.SaveAs(savedExcelFilePath);
            workbook.Close();
            sheet = null;
            workbook = null;

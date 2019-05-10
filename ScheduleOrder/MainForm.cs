@@ -39,6 +39,7 @@ namespace ScheduleOrder
             //dataGridView_home.CellMouseClick += new DataGridViewCellMouseEventHandler(dataGridView_home_CellMouseClick);
             StripMenuItem_Combine.Click += new EventHandler(StripMenuItem_Combine_Click);
             StripMenuItem_Night1.Click += new EventHandler(StripMenuItem_Night1_Click);
+            StripMenuItem_Night2.Click += new EventHandler(StripMenuItem_Night2_Click);
             ///结束右键处理事件
 
             dataGridView_home.RowPostPaint += new DataGridViewRowPostPaintEventHandler(dataGridView_home_RowPostPaint);
@@ -103,16 +104,7 @@ namespace ScheduleOrder
 
         }
 
-        /// <summary>
-        /// 上夜点击事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void StripMenuItem_Night1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
 
         void StripMenuItem_Combine_Click(object sender, EventArgs e)
         {
@@ -142,6 +134,45 @@ namespace ScheduleOrder
                 MessageBox.Show("请先选择班次，再进行班次合并.");
             }
         }
+
+        /// <summary>
+        /// Night shift 1 上夜点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void StripMenuItem_Night1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView_home.CurrentCell != null)
+                {
+                    NightShiftHandler.GenerateNightShiftCell("1", dataGridView_home, dataGridView_home.CurrentCell);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("发生错误了:" + ex.Message);
+            }
+
+        }
+        /// <summary>
+        /// Night Shift 2, 下半夜点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void StripMenuItem_Night2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView_home.CurrentCell != null)
+                {
+                    NightShiftHandler.GenerateNightShiftCell("2", dataGridView_home, dataGridView_home.CurrentCell);
+                }
+            }catch(Exception ex){
+                MessageBox.Show("发生错误了:" + ex.Message);
+            }
+        }
+
 
         void btnExportReport_Click(object sender, EventArgs e)
         {

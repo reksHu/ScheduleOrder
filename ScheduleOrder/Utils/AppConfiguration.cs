@@ -31,5 +31,22 @@ namespace ScheduleOrder.Utils
         public static string ConfigurationFolderName() {
             return ConfigurationManager.AppSettings["ConfigurationFolderName"].ToString();
         }
+
+        /// <summary>
+        /// ShiftNum = 1 获取上半夜值班名称
+        /// shiftNum = 2 获取下半夜值班名称
+        /// </summary>
+        /// <param name="shiftNum"></param>
+        /// <returns></returns>
+        public static dynamic GetNightShiftName(string shiftNum)
+        {
+            string shiftName = string.Format("NightShift{0}Name", shiftNum);
+            string shiftIndexName = string.Format("NightShift{0}Index",shiftNum);
+            var obj = new {NightShiftName = ConfigurationManager.AppSettings[shiftName].ToString(),
+                NightShiftIndex = ConfigurationManager.AppSettings[shiftIndexName].ToString()
+            };
+            return obj;
+
+        }
     }
 }

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="contextMenu_rightclick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="excelSaveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>195, 17</value>
+  </metadata>
   <metadata name="JobName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -139,21 +145,6 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnWeekPicker.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAYAAADj5tSrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFUSURBVDhPvZTLSsNAGIV9QTfi1oU7wQfwCdyJO19BFMQb
-        Kkq1LUlNUzdZBEQIKFFEEWFMY0ltTI+cISmkM7kUxQ/+3Zn5ODOTzOEfyEkOdraxtrpSOczNQk7CDYht
-        25Oxul10ri0YpoVWuwPR/5rk6qKVZCTjMUZxgmj4jXAwkoI3EclcHMdpqprCJtMNGk0T5w0DL+8DmQvD
-        UGbroJVQwAYUsAEFbHB60cbj66fMCSFkdn55vXAyFAmPSNeAgqOzFu6f+zkJKRMQRVLWYP+kCe8pUCSk
-        SEAUCS9Z14CCveMr3PkfWgnRCYgiKWuwe3iJ2wdRKClCkfCZ6hpQsLS4IDO/lrABnykb8JLZgEeUNdja
-        3MBNr4cgCNJV1eQkdX4rpmHA931EUZSuqiYnIfzIPM+D4zjKuK4rBcwkSZKuqEaR8HfBTXjm08MjYoNZ
-        BESR/D3AD/0DpDothiSdAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="contextMenu_rightclick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="pic_schedule_time.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAHgAAAA8CAIAAAAiz+n/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -172,10 +163,19 @@
         SUVORK5CYII=
 </value>
   </data>
-  <metadata name="excelSaveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>195, 17</value>
-  </metadata>
+  <data name="btnWeekPicker.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAYAAADj5tSrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFUSURBVDhPvZTLSsNAGIV9QTfi1oU7wQfwCdyJO19BFMQb
+        Kkq1LUlNUzdZBEQIKFFEEWFMY0ltTI+cISmkM7kUxQ/+3Zn5ODOTzOEfyEkOdraxtrpSOczNQk7CDYht
+        25Oxul10ri0YpoVWuwPR/5rk6qKVZCTjMUZxgmj4jXAwkoI3EclcHMdpqprCJtMNGk0T5w0DL+8DmQvD
+        UGbroJVQwAYUsAEFbHB60cbj66fMCSFkdn55vXAyFAmPSNeAgqOzFu6f+zkJKRMQRVLWYP+kCe8pUCSk
+        SEAUCS9Z14CCveMr3PkfWgnRCYgiKWuwe3iJ2wdRKClCkfCZ6hpQsLS4IDO/lrABnykb8JLZgEeUNdja
+        3MBNr4cgCNJV1eQkdX4rpmHA931EUZSuqiYnIfzIPM+D4zjKuK4rBcwkSZKuqEaR8HfBTXjm08MjYoNZ
+        BESR/D3AD/0DpDothiSdAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>71</value>
+    <value>69</value>
   </metadata>
 </root>

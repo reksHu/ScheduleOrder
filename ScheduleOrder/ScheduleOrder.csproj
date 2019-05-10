@@ -79,6 +79,7 @@
     <Compile Include="Utils\IInfo.cs" />
     <Compile Include="Utils\InfoHandel.cs" />
     <Compile Include="Utils\Miscellaneous.cs" />
+    <Compile Include="Utils\NightShiftHandler.cs" />
     <Compile Include="Utils\PrintHelper.cs" />
     <Compile Include="Utils\ReflectionHelper.cs" />
     <Compile Include="Utils\TablePrinter.cs" />

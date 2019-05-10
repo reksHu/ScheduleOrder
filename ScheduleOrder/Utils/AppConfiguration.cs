@@ -38,7 +38,7 @@ namespace ScheduleOrder.Utils
         /// </summary>
         /// <param name="shiftNum"></param>
         /// <returns></returns>
-        public static dynamic GetNightShiftName(string shiftNum)
+        public static dynamic GetNightShiftObj(string shiftNum)
         {
             string shiftName = string.Format("NightShift{0}Name", shiftNum);
             string shiftIndexName = string.Format("NightShift{0}Index",shiftNum);
@@ -48,5 +48,17 @@ namespace ScheduleOrder.Utils
             return obj;
 
         }
+
+        /// <summary>
+        /// 获取夜班排班名称
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetNightShiftNames() {
+            List<string> names = new List<string>();
+            names.Add(ConfigurationManager.AppSettings["NightShift1Name"].ToString());
+            names.Add(ConfigurationManager.AppSettings["NightShift2Name"].ToString());
+            return names;
+        }
+
     }
 }

@@ -15,7 +15,7 @@ namespace ScheduleOrder.Utils
         {
             try
             {
-                var shiftObj = AppConfiguration.GetNightShiftName(shiftNum);
+                var shiftObj = AppConfiguration.GetNightShiftObj(shiftNum);
                 int rowIndex = currentCell.RowIndex;
                 int columnIndex = currentCell.ColumnIndex;
                 string cellVal = currentCell.Value.ToString();

@@ -395,6 +395,7 @@ namespace ScheduleOrder.Utils
                     var result = item.Jobs.Where(p => !string.IsNullOrEmpty(p.Element("Morning").Value) || !string.IsNullOrEmpty(p.Element("Afternoon").Value))
                         //.Select(p => p.Elements("Morning"));
                         .Select(p => new { Morning = p.Element("Morning").Value, Afternoon = p.Element("Afternoon").Value });
+
                     foreach (var r in result)
                     {
                         jobsCount.Count(r.Morning);

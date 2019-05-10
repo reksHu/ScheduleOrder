@@ -24,6 +24,25 @@ namespace ScheduleOrder
            }
        }
 
+       public void NightShiftCount(string nightShiftJobName, string nightShiftJobIndexStr)
+       {
+           if (string.IsNullOrEmpty(nightShiftJobName) || string.IsNullOrEmpty(nightShiftJobIndexStr))
+           {
+               return;
+           }
+           double nightShiftJobIndex = 0;
+           if (double.TryParse(nightShiftJobIndexStr, out nightShiftJobIndex) && jobDict.ContainsKey(nightShiftJobName))
+           {
+               double count = jobDict[nightShiftJobName];
+               jobDict[nightShiftJobName] = count + nightShiftJobIndex;
+           }
+
+           if (double.TryParse(nightShiftJobIndexStr, out nightShiftJobIndex) && !jobDict.ContainsKey(nightShiftJobName)) {
+               jobDict.Add(nightShiftJobName, nightShiftJobIndex);
+           }
+          
+       }
+
        public  Dictionary<string, double> GetJobDict()
        {
            return jobDict;
